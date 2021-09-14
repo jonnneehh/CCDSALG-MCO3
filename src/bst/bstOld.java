@@ -1,6 +1,6 @@
 package bst;
 
-public class bst {
+public class bstOld {
  
     node root;
     
