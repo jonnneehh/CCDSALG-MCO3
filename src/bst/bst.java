@@ -3,7 +3,7 @@ package bst;
 
 public class bst {
  
-	public node newNode(int item)
+	static node newNode(int item)
 	{
 	    node temp = new node();
 	    temp.key = item;
