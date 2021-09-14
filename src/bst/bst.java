@@ -117,7 +117,7 @@ public class bst {
 	
 	public void destroy(node root) {
 		
-		ArrayList<Integer> values = null;
+		ArrayList<Integer> values = new ArrayList<Integer>();
 		
 		inorderDelete(root, values);
 		

@@ -12,8 +12,9 @@ public class main {
 		root = bst.insert(root, 30);
 		root = bst.insert(root, 40);
 		bst.inorder(root);
-		
+		System.out.print("\n");
 		bst.destroy(root);
+		System.out.print("\n");
 		bst.inorder(root);
 	}
 
