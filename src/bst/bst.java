@@ -3,6 +3,8 @@ package bst;
 import java.util.ArrayList;
 
 public class bst {
+
+	private ArrayList<Integer> values = new ArrayList<Integer>();
 	
 	public class node
 	{
@@ -45,7 +47,6 @@ public class bst {
 	    return node;
 	}
 	 
-	
 	public node delete(node root, int k)
 	{
 	     
@@ -102,24 +103,22 @@ public class bst {
 	    }
 	}
 	
-	private void inorderDelete(node root, ArrayList<Integer> values)
+	public void inorderDelete(node root)
 	{
 	    int i = 0;
 	    
 		if (root != null)
 	    {
-	        inorder(root.left);
+			inorderDelete(root.left);
 	        values.add(i, root.key);
 	        i++;
-	        inorder(root.right);
+	        inorderDelete(root.right);
 	    }
 	}
 	
 	public void destroy(node root) {
-		
-		ArrayList<Integer> values = new ArrayList<Integer>();
-		
-		inorderDelete(root, values);
+
+		inorderDelete(root);
 		
 		for(int i = 0; i < values.size(); i++)
 			delete(root, values.get(i));
