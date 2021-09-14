@@ -2,8 +2,14 @@ package bst;
 
 
 public class bst {
- 
-	static node newNode(int item)
+	
+	static class node
+	{
+	    int key;
+	    node left, right;
+	}
+	
+	static node create(int item)
 	{
 	    node temp = new node();
 	    temp.key = item;
@@ -11,7 +17,7 @@ public class bst {
 	    return temp;
 	}
 	 
-	public void inorder(node root)
+	static void inorder(node root)
 	{
 	    if (root != null)
 	    {
@@ -22,12 +28,12 @@ public class bst {
 	}
 	 
 
-	public node insert(node node, int key)
+	static node insert(node node, int key)
 	{
 	     
 
 	    if (node == null)
-	        return newNode(key);
+	        return create(key);
 	 
 
 	    if (key < node.key)
@@ -40,7 +46,7 @@ public class bst {
 	}
 	 
 	
-	public node delete(node root, int k)
+	static node delete(node root, int k)
 	{
 	     
 	   
@@ -97,7 +103,7 @@ public class bst {
 	}
 	
     
-    public node search(node root, int key)
+	static node search(node root, int key)
     {
         if (root==null || root.key==key)
             return root;
