@@ -8,7 +8,7 @@ public class bst {
 	    Node left, right;
 	}
 	 
-
+	
 	public Node newNode(int item)
 	{
 	    Node temp = new Node();
@@ -102,8 +102,18 @@ public class bst {
 	    }
 	}
 	
-	
-	
+    
+    public Node search(Node root, int key)
+    {
+        if (root==null || root.key==key)
+            return root;
+     
+        if (root.key < key)
+           return search(root.right, key);
+     
+        return search(root.left, key);
+    }
+
 }
 
 
