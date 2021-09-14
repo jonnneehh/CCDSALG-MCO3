@@ -1,23 +1,17 @@
 package bst;
 
+
 public class bst {
  
-	public class Node
+	public node newNode(int item)
 	{
-	    int key;
-	    Node left, right;
-	}
-	 
-	
-	public Node newNode(int item)
-	{
-	    Node temp = new Node();
+	    node temp = new node();
 	    temp.key = item;
 	    temp.left = temp.right = null;
 	    return temp;
 	}
 	 
-	public void inorder(Node root)
+	public void inorder(node root)
 	{
 	    if (root != null)
 	    {
@@ -28,7 +22,7 @@ public class bst {
 	}
 	 
 
-	public Node insert(Node node, int key)
+	public node insert(node node, int key)
 	{
 	     
 
@@ -46,7 +40,7 @@ public class bst {
 	}
 	 
 	
-	public Node delete(Node root, int k)
+	public node delete(node root, int k)
 	{
 	     
 	   
@@ -68,20 +62,20 @@ public class bst {
 	
 	    if (root.left == null)
 	    {
-	        Node temp = root.right;
+	        node temp = root.right;
 	        return temp;
 	    }
 	    else if (root.right == null)
 	    {
-	        Node temp = root.left;
+	        node temp = root.left;
 	        return temp;
 	    }
 	    else
 	    {
-	        Node succParent = root;
+	        node succParent = root;
 	 
 
-	        Node succ = root.right;
+	        node succ = root.right;
 	         
 	        while (succ.left != null)
 	        {
@@ -103,7 +97,7 @@ public class bst {
 	}
 	
     
-    public Node search(Node root, int key)
+    public node search(node root, int key)
     {
         if (root==null || root.key==key)
             return root;
