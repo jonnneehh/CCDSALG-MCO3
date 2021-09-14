@@ -3,12 +3,12 @@ package bst;
 public class bst {
  
     node root;
-
-    public bst(){
-         root = null;
+    
+    public void create() {
+    	root = null;
     }
     
-    public void insert(int key){
+	public void insert(int key){
          root = insertRec(root, key);
     }
  
