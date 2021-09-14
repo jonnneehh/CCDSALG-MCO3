@@ -1,15 +1,16 @@
 package bst;
 
+import java.util.ArrayList;
 
 public class bst {
 	
-	static class node
+	public class node
 	{
 	    int key;
 	    node left, right;
 	}
 	
-	static node create(int item)
+	public node create(int item)
 	{
 	    node temp = new node();
 	    temp.key = item;
@@ -17,7 +18,7 @@ public class bst {
 	    return temp;
 	}
 	 
-	static void inorder(node root)
+	public void inorder(node root)
 	{
 	    if (root != null)
 	    {
@@ -27,8 +28,7 @@ public class bst {
 	    }
 	}
 	 
-
-	static node insert(node node, int key)
+	public node insert(node node, int key)
 	{
 	     
 
@@ -46,7 +46,7 @@ public class bst {
 	}
 	 
 	
-	static node delete(node root, int k)
+	public node delete(node root, int k)
 	{
 	     
 	   
@@ -102,8 +102,30 @@ public class bst {
 	    }
 	}
 	
-    
-	static node search(node root, int key)
+	private void inorderDelete(node root, ArrayList<Integer> values)
+	{
+	    int i = 0;
+	    
+		if (root != null)
+	    {
+	        inorder(root.left);
+	        values.add(i, root.key);
+	        i++;
+	        inorder(root.right);
+	    }
+	}
+	
+	public void destroy(node root) {
+		
+		ArrayList<Integer> values = null;
+		
+		inorderDelete(root, values);
+		
+		for(int i = 0; i < values.size(); i++)
+			delete(root, values.get(i));
+	}
+	
+	public node search(node root, int key)
     {
         if (root==null || root.key==key)
             return root;
