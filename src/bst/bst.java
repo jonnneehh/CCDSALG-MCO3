@@ -1,18 +1,15 @@
 package bst;
 
-import java.util.ArrayList;
 
 public class bst {
-
-	private ArrayList<Integer> values = new ArrayList<Integer>();
 	
-	public class node
+	public static class node
 	{
 	    int key;
 	    node left, right;
 	}
 	
-	public node create(int item)
+	public static node create(int item)
 	{
 	    node temp = new node();
 	    temp.key = item;
@@ -20,7 +17,7 @@ public class bst {
 	    return temp;
 	}
 	 
-	public void inorder(node root)
+	public static void inorder(node root)
 	{
 	    if (root != null)
 	    {
@@ -30,10 +27,9 @@ public class bst {
 	    }
 	}
 	 
-	public node insert(node node, int key)
+	public static node insert(node node, int key)
 	{
 	     
-
 	    if (node == null)
 	        return create(key);
 	 
@@ -47,7 +43,7 @@ public class bst {
 	    return node;
 	}
 	 
-	public node delete(node root, int k)
+	public static node delete(node root, int k)
 	{
 	     
 	   
@@ -81,7 +77,6 @@ public class bst {
 	    {
 	        node succParent = root;
 	 
-
 	        node succ = root.right;
 	         
 	        while (succ.left != null)
@@ -101,30 +96,17 @@ public class bst {
 	 
 	        return root;
 	    }
-	}
-	
-	public void inorderDelete(node root)
-	{
-	    int i = 0;
 	    
-		if (root != null)
-	    {
-			inorderDelete(root.left);
-	        values.add(i, root.key);
-	        i++;
-	        inorderDelete(root.right);
-	    }
 	}
 	
-	public void destroy(node root) {
-
-		inorderDelete(root);
-		
-		for(int i = 0; i < values.size(); i++)
-			delete(root, values.get(i));
-	}
-	
-	public node search(node root, int key)
+	public static node destroy(node root)
+    {
+        root = null;
+        
+        return root;
+    }
+     
+	public static node search(node root, int key)
     {
         if (root==null || root.key==key)
             return root;
