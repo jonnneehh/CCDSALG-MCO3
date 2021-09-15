@@ -42,10 +42,11 @@ public class bst {
 	    
 	    return node;
 	}
-	
 	 
 	public static node delete(node root, int k)
 	{
+	     
+	   
 	    if (root == null)
 	        return root;
 	 
@@ -95,34 +96,7 @@ public class bst {
 	 
 	        return root;
 	    }
-<<<<<<< HEAD
-	}
-	
-	
-	public void inorderDelete(node root)
-	{
-	    int i = 0;
 	    
-		if (root != null)
-	    {
-			inorderDelete(root.left);
-	        values.add(i, root.key);
-	        i++;
-	        inorderDelete(root.right);
-	    }
-	}
-	
-	public void destroy(node root) {
-
-		inorderDelete(root);
-		
-		for(int i = 0; i < values.size(); i++)
-			delete(root, values.get(i));
-		
-		this.root = null;
-=======
-	    
->>>>>>> e8b5d756dae952d9b2d06663dbf1838ebfc596f2
 	}
 	
 	public static node destroy(node root)
@@ -142,6 +116,6 @@ public class bst {
      
         return search(root.left, key);
     }
-}
 
+}
 
