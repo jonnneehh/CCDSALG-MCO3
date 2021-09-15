@@ -8,14 +8,12 @@ public class main {
 		
 		bst.node root = null; 
 		
-		root = bst.insert(root, 50);
-		root = bst.insert(root, 30);
-		root = bst.insert(root, 40);
+		root = bst.insert(root, 10);
+		root = bst.insert(root, 20);
+		root = bst.insert(root, 1000000);
 		bst.inorder(root);
 		System.out.print("\n");
 		bst.destroy(root);
-		System.out.print("\n");
 		bst.inorder(root);
 	}
-
 }

@@ -46,11 +46,10 @@ public class bst {
 	    
 	    return node;
 	}
+	
 	 
 	public node delete(node root, int k)
 	{
-	     
-	   
 	    if (root == null)
 	        return root;
 	 
@@ -103,6 +102,7 @@ public class bst {
 	    }
 	}
 	
+	
 	public void inorderDelete(node root)
 	{
 	    int i = 0;
@@ -122,6 +122,8 @@ public class bst {
 		
 		for(int i = 0; i < values.size(); i++)
 			delete(root, values.get(i));
+		
+		this.root = null;
 	}
 	
 	public node search(node root, int key)
@@ -134,7 +136,6 @@ public class bst {
      
         return search(root.left, key);
     }
-
 }
 
 
