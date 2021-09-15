@@ -5,11 +5,11 @@ public class bst {
 	
 	public static class node
 	{
-	    int key;
+	    String key;
 	    node left, right;
 	}
 	
-	public static node create(int item)
+	public static node create(String item)
 	{
 	    node temp = new node();
 	    temp.key = item;
@@ -27,14 +27,14 @@ public class bst {
 	    }
 	}
 	 
-	public static node insert(node node, int key)
+	public static node insert(node node, String key)
 	{
 	     
 	    if (node == null)
 	        return create(key);
 	 
 
-	    if (key < node.key)
+	    if (key.compareTo(node.key) < 0)
 	        node.left = insert(node.left, key);
 	    else
 	        node.right = insert(node.right, key);
@@ -43,7 +43,7 @@ public class bst {
 	    return node;
 	}
 	 
-	public static node delete(node root, int k)
+	public static node delete(node root, String k)
 	{
 	     
 	   
@@ -51,12 +51,12 @@ public class bst {
 	        return root;
 	 
 	    
-	    if (root.key > k)
+	    if (root.key.compareTo(k) > 0)
 	    {
 	        root.left = delete(root.left, k);
 	        return root;
 	    }
-	    else if (root.key < k)
+	    else if (root.key.compareTo(k) < 0)
 	    {
 	        root.right = delete(root.right, k);
 	        return root;
@@ -106,12 +106,12 @@ public class bst {
         return root;
     }
      
-	public static node search(node root, int key)
+	public static node search(node root, String key)
     {
         if (root==null || root.key==key)
             return root;
      
-        if (root.key < key)
+        if (root.key.compareTo(key) < 0)
            return search(root.right, key);
      
         return search(root.left, key);
