@@ -1,10 +1,10 @@
 package main;
 import bst.bst;
 
-public class Main {
+public class main {
 
-	public static void Main(String[] args) {
-		
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		bst.node root = null; 
 		
 		root = bst.insert(root, 35);
@@ -16,4 +16,5 @@ public class Main {
 		System.out.print("\n");
 		bst.inorder(root);
 	}
+
 }
