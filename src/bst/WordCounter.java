@@ -12,21 +12,30 @@ public class WordCounter {
     public WordCounter() throws IOException {
         bst.node root= null;
         words = new ArrayList<>();
+        String filename;
 
-        inputFile = new File("INPUT.txt");
+        Scanner kb = new Scanner(System.in);
+        System.out.println("Enter filename (not case sensitive): ");
+        filename = kb.nextLine();
 
-        Scanner scan = new Scanner(inputFile);
+        try{
+            inputFile = new File(filename + ".txt");
 
-        while(scan.hasNext()){
-            root = bst.insert(root, scan.next());
+            Scanner scan = new Scanner(inputFile);
+
+            while(scan.hasNext()){
+                root = bst.insert(root, scan.next());
+            }
+
+            bst.inorder(this,root);
+
+            strings = words.toArray();
+
+
+            countFreq(strings, strings.length);
+        } catch(Exception e){
+            System.out.println("File not found");
         }
-
-        bst.inorder(this,root);
-
-        strings = words.toArray();
-
-
-        countFreq(strings, strings.length);
     }
 
     public void countFreq(Object arr[], int n) throws IOException {
