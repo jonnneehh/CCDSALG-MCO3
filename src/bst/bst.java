@@ -6,6 +6,7 @@ public class bst {
 	public static class node
 	{
 	    String key;
+	    String temp = "";
 	    node left, right;
 	}
 	
@@ -23,6 +24,7 @@ public class bst {
 	    {
 	        inorder(root.left);
 	        System.out.print(root.key + " ");
+	        root.temp = root.temp.concat(root.key + " ");
 	        inorder(root.right);
 	    }
 	}
