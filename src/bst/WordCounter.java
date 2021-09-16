@@ -13,7 +13,7 @@ public class WordCounter {
         bst.node root= null;
         words = new ArrayList<>();
 
-        inputFile = new File("inputFile.txt");
+        inputFile = new File("INPUT.txt");
 
         Scanner scan = new Scanner(inputFile);
 
@@ -31,7 +31,7 @@ public class WordCounter {
 
     public void countFreq(Object arr[], int n) throws IOException {
         Map<Object, Integer> mp = new HashMap<>();
-        outputFile = new FileWriter("outputFile.txt");
+        outputFile = new FileWriter("WORDS.txt");
 
         // Traverse through array elements and
         // count frequencies
