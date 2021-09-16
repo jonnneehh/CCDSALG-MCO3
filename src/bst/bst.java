@@ -17,13 +17,14 @@ public class bst {
 	    return temp;
 	}
 	 
-	public static void inorder(node root)
+	public static void inorder(WordCounter test, node root)
 	{
 	    if (root != null)
 	    {
-	        inorder(root.left);
+	        inorder(test, root.left);
 	        System.out.print(root.key + " ");
-	        inorder(root.right);
+	        test.words.add(root.key);
+	        inorder(test, root.right);
 	    }
 	}
 	 
