@@ -21,5 +21,4 @@ public class main {
 		System.out.print("\n");
 		bst.inorder(root);
 	}
-
 }
