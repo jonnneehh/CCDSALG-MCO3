@@ -4,9 +4,11 @@ import java.io.*;
 import java.util.*;
 
 public class WordCounter {
+    public ArrayList<String> words;
+
     public WordCounter() throws IOException {
         bst.node root= null;
-        ArrayList<String> words = new ArrayList<>();
+        words = new ArrayList<>();
 
         File inputFile = new File("inputFile.txt");
         FileWriter outputFile = new FileWriter("outputFile.txt");
@@ -17,9 +19,7 @@ public class WordCounter {
             root = bst.insert(root, scan.next());
         }
 
-        bst.inorder(root);
-        while (root != null)
-            words.add(root.key);
+        bst.inorder(this,root);
 
         for (String word : words) {
             outputFile.write(word + "\n");
