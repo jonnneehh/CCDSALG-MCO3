@@ -18,11 +18,10 @@ public class WordCounter {
         }
 
         bst.inorder(root);
-        words.add(root.temp);
 
-        for (String word : words) {
+        /*for (String word : words) {
             outputFile.write(word + "\n");
         }
-        outputFile.close();
+        outputFile.close();*/
     }
 }
